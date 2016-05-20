@@ -1,1 +1,11 @@
-body {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 center;}
+html,body {overflow: hidden;}
+body {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: relative;}
+.thing {position: absolute;background: url() no-repeat 0 0;}
+.girl-sad {bottom: 10px;left: 10px;background-image: url(../img/girl_sad.png);}
+.txt-1 {left: 523px;top: 1360px;background-image: url(../img/txt_1.png); }
+.txt-2 {left: 34px;top: 151px;background-image: url(../img/txt_2.png); }
+.txt-3 {left: 352px;top: 310px;background-image: url(../img/txt_3.png); }
+.red-bottle {left: 349px;top: 67px;background-image: url(../img/red_bottle.png); }
+.red-bottle.glow {background-image: url(../img/red_bottle_glow.png);}
+.blue-bottle {left: 612px;top: 252px;background-image: url(../img/blue_bottle.png); }
+.bubble {left: 36px;top: 610px;background-image: url(../img/bubble.png); }
