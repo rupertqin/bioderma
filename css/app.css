@@ -6,6 +6,7 @@ body {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: rela
 .txt-2 {left: 34px;top: 151px;background-image: url(../img/txt_2.png); }
 .txt-3 {left: 352px;top: 310px;background-image: url(../img/txt_3.png); }
 .red-bottle {left: 349px;top: 67px;background-image: url(../img/red_bottle.png); }
+.red-bottle .lid {left: 112px;top: 75px;width: 68px;height: 22px;background-image: url(../img/red_bottle_lid.png); }
 .red-bottle.glow {background-image: url(../img/red_bottle_glow.png);}
 .blue-bottle {left: 612px;top: 252px;background-image: url(../img/blue_bottle.png); }
 .bubble {left: 36px;top: 610px;background-image: url(../img/bubble.png); }

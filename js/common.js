@@ -25,14 +25,15 @@ var app = {
     },
     
     quiverRedBottle: function(ts) {
-        var $el = $('.red-bottle.glow')[0]
+        var $elGlow = $('.red-bottle.glow')[0]
+        var $el = $('.red-bottle:not(.glow)')[0]
         function quiverOnce() {
-            TweenMax.to($el, ts, {
+            TweenMax.to([$el, $elGlow], ts, {
                 rotation: -2, 
                 yoyo: true,
                 repeat: 8,
                 onComplete: function() {
-                    TweenMax.to($el, ts, {rotation: 0,transformOrigin: "center bottom"});
+                    TweenMax.to([$el, $elGlow], ts, {rotation: 0,transformOrigin: "center bottom"});
                 },
                 transformOrigin: "center bottom"});
         }
@@ -41,7 +42,7 @@ var app = {
     },
     
     touchRedBottle: function() {
-        var $el = $('.red-bottle.glow')
+        var $el = $('.red-bottle')
         var self = this
         
         // once handler        
@@ -60,19 +61,32 @@ var app = {
         var delay = 0.5
         var $elGlow = $('.red-bottle.glow')[0]
         var $el = $('.red-bottle:not(.glow)')[0]
-        var firstStepGlowProp = {opacity: 0}
-        var firstStepProp = {
+        var $lid = $('.red-bottle .lid')[0]
+        
+        // bottle move to lefttop
+        var aniGlowProp = {
+            opacity: 0, 
+            onComplete: function() {
+                // remove elGlow after animate
+                $elGlow.outerHTML = ''
+            }
+        }   
+        var aniProp = {
             x: -564, y: -730,
             scale: 1.3,
             ease: 'Power4',
             rotation: 150,
             delay: delay,
             transformOrigin: "center bottom"}
-        setTimeout(function() {$el.style.display = ''}, delay*1000)
-        TweenMax.to($el, 1, firstStepProp);
-        Object.assign(firstStepGlowProp, firstStepProp)
-        TweenMax.to($elGlow, 1, firstStepGlowProp);
+        Object.assign(aniGlowProp, aniProp)     // merge prop
+        TweenMax.to($el, 1, aniProp);
+        TweenMax.to($elGlow, 1, aniGlowProp);
+        
+        // text fade
         TweenMax.staggerTo([$('.txt-3')[0], $('.txt-2')[0]], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
+        
+        // open lid 
+        TweenMax.to($lid, 1, {delay: 1+delay,rotation: 150,transformOrigin: "right bottom"});
         
         
                 
