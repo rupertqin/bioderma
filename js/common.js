@@ -95,8 +95,8 @@ var app = {
         TweenMax.to($dropletRed, 1, {opacity: 1});
         TweenMax.to($dropletRed, 1.5, {delay: 0.5,x: -156, y: 550});
         TweenMax.to($dropletRed, 1.5, {delay: 2,x: 214, y: 350});
-        TweenMax.to($dropletRed, 1.5, {delay: 3.5,x: 314, y: 650});
-        TweenMax.to($dropletRed, 1.5, {delay: 5,x: 14, y: 910, onComplete: this.girlSmile.bind(this)});
+        TweenMax.to($dropletRed, 1.5, {delay: 3.5,x: 314, y: 650, onComplete: this.girlSmile.bind(this)});
+        TweenMax.to($dropletRed, 1.5, {delay: 5,x: 14, y: 910});
     },
     
     girlSmile: function() {
