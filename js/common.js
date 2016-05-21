@@ -86,10 +86,26 @@ var app = {
         TweenMax.staggerTo([$('.txt-3')[0], $('.txt-2')[0]], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
         
         // open lid 
-        TweenMax.to($lid, 1, {delay: 1+delay,rotation: 150,transformOrigin: "right bottom"});
+        TweenMax.to($lid, 0.6, {delay: 1+delay,rotation: 150,transformOrigin: "right bottom", onComplete: this.dropletMove.bind(this)});
         
-        
-                
+    },
+    
+    dropletMove: function() {
+        var $dropletRed = $('.droplet-red')[0] 
+        TweenMax.to($dropletRed, 1, {opacity: 1});
+        TweenMax.to($dropletRed, 1.5, {delay: 0.5,x: -156, y: 550});
+        TweenMax.to($dropletRed, 1.5, {delay: 2,x: 214, y: 350});
+        TweenMax.to($dropletRed, 1.5, {delay: 3.5,x: 314, y: 650});
+        TweenMax.to($dropletRed, 1.5, {delay: 5,x: 14, y: 910, onComplete: this.girlSmile.bind(this)});
+    },
+    
+    girlSmile: function() {
+        var $girlSad = $('.girl-sad')[0] 
+        var $girlSmile = $('.girl-smile')[0] 
+        TweenMax.to($girlSad, 1, {opacity: 0, onComplete: function() {$girlSad.outerHTML = ''}});
+        TweenMax.to($girlSmile, 1, {opacity: 1});
+        TweenMax.to($('.txt-1'), 1, {opacity: 0});
+        TweenMax.to($('.txt-6'), 1, {opacity: 1});
     }
 }
 
