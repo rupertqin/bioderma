@@ -26,22 +26,18 @@ var app = {
     
     quiverRedBottle: function(ts) {
         var $el = $('.red-bottle.glow')[0]
-        var times = 5 * 2
-        var angle = 1
-        function quiverOnce(){
-            for (var i=0;i<times;i++) {
-                if (i < times-1) {
-                    TweenMax.to($el, ts, {
-                        delay: ts*i,
-                        rotation: i%2==0 ? -angle : angle, 
-                        transformOrigin: "left bottom"});
-                } else {
-                    TweenMax.to($el, ts, {delay: ts*i,rotation: 0, transformOrigin: "left bottom"});
-                }
-            }
+        function quiverOnce() {
+            TweenMax.to($el, ts, {
+                rotation: -2, 
+                yoyo: true,
+                repeat: 8,
+                onComplete: function() {
+                    TweenMax.to($el, ts, {rotation: 0,transformOrigin: "center bottom"});
+                },
+                transformOrigin: "center bottom"});
         }
         quiverOnce()
-        this.intervalRedBottle = setInterval(quiverOnce, 2000)
+        this.intervalRedBottle = setInterval(quiverOnce, 2500)
     },
     
     touchRedBottle: function() {
