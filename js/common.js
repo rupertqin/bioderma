@@ -57,12 +57,25 @@ var app = {
     },
     
     redBottleToLeftTop: function() {
+        var delay = 0.5
         var $elGlow = $('.red-bottle.glow')[0]
         var $el = $('.red-bottle:not(.glow)')[0]
-        $el.style.display = ''
-        TweenMax.to($elGlow, 1, {delay: 0.5,opacity: 0,rotation: -180, transformOrigin: "left bottom"});
-        TweenMax.to($el, 1, {delay: 0.5,rotation: -180, transformOrigin: "left bottom"}).yoyo(true);
+        var firstStepGlowProp = {opacity: 0}
+        var firstStepProp = {
+            x: -564, y: -730,
+            scale: 1.3,
+            ease: 'Power4',
+            rotation: 150,
+            delay: delay,
+            transformOrigin: "center bottom"}
+        setTimeout(function() {$el.style.display = ''}, delay*1000)
+        TweenMax.to($el, 1, firstStepProp);
+        Object.assign(firstStepGlowProp, firstStepProp)
+        TweenMax.to($elGlow, 1, firstStepGlowProp);
+        TweenMax.staggerTo([$('.txt-3')[0], $('.txt-2')[0]], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
         
+        
+                
     }
 }
 
