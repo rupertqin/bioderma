@@ -1,4 +1,5 @@
 var $ = document.querySelectorAll.bind(document)
+var $$ = document.querySelector.bind(document)
 Element.prototype.on = Element.prototype.addEventListener;
 Element.prototype.hasClassName = function (a) {
     return new RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className);
