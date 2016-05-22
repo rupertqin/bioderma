@@ -68,7 +68,7 @@ var app = {
             opacity: 0, 
             onComplete: function() {
                 // remove elGlow after animate
-                $elGlow.outerHTML = ''
+                $elGlow && ($elGlow.outerHTML = '')
             }
         }   
         var aniProp = {
@@ -86,39 +86,44 @@ var app = {
         TweenMax.staggerTo([$('.txt-3')[0], $('.txt-2')[0]], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
         
         // open lid 
-        TweenMax.to($lid, 0.6, {delay: 1+delay,rotation: 150,transformOrigin: "right bottom", onComplete: this.dropletMove.bind(this)});
+        TweenMax.to($lid, 0.6, {delay: 1+delay,rotation: 150,
+            transformOrigin: "right bottom", 
+            onComplete: function() {
+                TweenMax.to($$('.pipe-red'), 1, {opacity: 1})
+                TweenMax.to($$('.txt-4'), 1, {delay: 0.5,opacity: 1})
+                app.dropletMove($$('.droplet-red'), app.girlSmile)
+            }
+        });
         
     },
     
-    dropletMove: function() {
-        var $dropletRed = $('.droplet-red')[0] 
+    dropletMove: function(el, callback) {
         $('body')[0].style.overflow = 'hidden'
         TweenMax.to(window, 2, {scrollTo:{y:300}, ease:Power2.easeOut});
         TweenMax.to(window, 2, {delay: 5,scrollTo:{y:800}, ease:Power2.easeOut});
         
-        TweenMax.to($dropletRed, 1, {opacity: 1});
-        TweenMax.to($dropletRed, 1.5, {delay: 0.5,x: -156, y: 550});
-        TweenMax.to($dropletRed, 1.5, {delay: 2,x: 214, y: 350});
-        TweenMax.to($dropletRed, 1.5, {delay: 3.5,x: 314, y: 650});
-        TweenMax.to($dropletRed, 1.5, {delay: 5,x: 14, y: 910, onComplete: this.girlSmile.bind(this)});
+        TweenMax.to(el, 0.5, {opacity: 1});
+        TweenMax.to(el, 1.5, {delay: .5,x: -156, y: 550,ease: Linear.easeNone});
+        TweenMax.to(el, 1.5, {delay: 2,x: 214, y: 350,ease: Linear.easeNone});
+        TweenMax.to(el, 1.5, {delay: 3.5,x: 314, y: 650,ease: Linear.easeNone});
+        TweenMax.to(el, 1.5, {delay: 5,x: 14, y: 910,ease: Linear.easeNone, onComplete: callback});
         
     },
     
     girlSmile: function() {
         // $('body')[0].style.overflow = 'auto'
-        var self = this
-        var $girlSad = $('.girl-sad')[0] 
+        var $girlSad = $('.girl-sad')
         TweenMax.to([$('.girl-smile')[0], $('.txt-6')], 1, {opacity: 1});
         TweenMax.to($('.txt-1'), 1, {opacity: 0});
-        TweenMax.to($girlSad, 1, {opacity: 0, onComplete: function() {
-            $girlSad.outerHTML = ''
-            setTimeout(self.prepareSecondDroplet.bind(self), 3*1000)
+        TweenMax.to($girlSad[0], 1, {opacity: 0, onComplete: function() {
+            $girlSad.remove()
+            setTimeout(app.prepareSecondDroplet, 3*1000)
             }
         });
     },
     
     prepareSecondDroplet: function() {
-        $('.red-bottle')[0].outerHTML = ''
+        $('.red-bottle').remove()
         var $blueBottle = $('.blue-bottle')[0]
         TweenMax.to($('.pipe-red')[0], 1, {opacity: 0});
         
@@ -127,21 +132,41 @@ var app = {
         $blueBottle.style.top = '285px'
 
         // hide & show
-        ;[]['forEach'].call($('.droplet-red, .txt-1, .txt-2, .txt-3, .girl-sad, .red-bottle'), function (el) {
-            el.outerHTML = ''
-        });
-        ;[]['forEach'].call($('.girl-smile, .txt-6'), function (el) {
+        $('.droplet-red, .txt-1, .txt-2, .txt-3, .txt-4,.girl-sad, .red-bottle').remove()
+        ;[]['forEach'].call($('.girl-smile, .txt-6, #scene-3 .bubble'), function (el) {
             el.style.opacity = 1
         });
         
-        TweenMax.to(window, 2, {scrollTo:{y:0}, ease:Power2.easeOut, onComplete: this.startBlueDroplet.bind(this)});
+        TweenMax.to(window, 2, {scrollTo:{y:0}, ease:Power2.easeOut});
+        app.startBlueDroplet()
     },
     
     startBlueDroplet: function() {
-        this.quiverBottle($$('.blue-bottle'))
-        this.touchBottle($('.blue-bottle'), function() {
-            
+        app.quiverBottle($$('.blue-bottle'))
+        app.touchBottle($('.blue-bottle'), app.handleBlueBottleTouch)
+    },
+    
+    handleBlueBottleTouch: function() {
+        TweenMax.to($$('.blue-bottle'), 1, {opacity: 0})
+        TweenMax.to($$('.blue-bottle-incling'), 1, {
+            delay: 0.5,opacity: 1, 
+            onComplete: function() {
+                TweenMax.to($$('.pipe-blue'), 2, {delay: 0.5,opacity: 1})
+                TweenMax.to($$('.txt-8'), 1, {opacity: 1})
+                app.dropletMove($$('.droplet-blue'), app.girlBigSmile)
+            }
         })
+    },
+    
+    girlBigSmile: function() {
+        TweenMax.to($$('.droplet-blue'), 1.5, {x: 126, y: 1090});
+        TweenMax.to([$$('.girl-smile'), $$('.txt-6')], 1, {delay: 1,opacity: 0})
+        TweenMax.to([$$('.girl-big-smile'), $$('.txt-7')], 1, {delay: 1,opacity: 1})
+        setTimeout(app.gotoMall, 5*1000)
+    },
+    
+    gotoMall: function() {
+        // location.href = ''
     }
 }
 

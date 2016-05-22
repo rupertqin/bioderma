@@ -17,12 +17,19 @@ Element.prototype.removeClassName = function (b) {
         this.className = a.replace(new RegExp("(?:^|\\s+)" + b + "(?:\\s+|$)", "g"), " ");
     }
 };
+
 Element.prototype.toggleClassName = function (a) {
   this[this.hasClassName(a) ? "removeClassName" : "addClassName"](a);
 };
 NodeList.prototype.on = function (event, fn) {
     []['forEach'].call(this, function (el) {
         el.on(event, fn);
+    });
+    return this;
+};
+NodeList.prototype.remove = function () {
+    []['forEach'].call(this, function (el) {
+        el.outerHTML = ''
     });
     return this;
 };
