@@ -1,5 +1,5 @@
 html,body {}
-body {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: relative;}
+body.animate {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: relative;}
 .thing {position: absolute;background: url() no-repeat 0 0;}
 .girl-sad {bottom: 4px;left: 24px;background-image: url(../img/girl_sad.png);}
 .girl-smile {bottom: 10px;left: 68px;background-image: url(../img/girl_smile.png);}
@@ -22,3 +22,5 @@ body {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: rela
 .pipe-red {left: 37px;top: 534px;background-image: url(../img/pipe_red.png); }
 .pipe-blue {left: 37px;top: 534px;background-image: url(../img/pipe_blue.png); }
 .blue-bottle-incling {left: 0;top: 0;background-image: url(../img/blue_bottle_incling.jpg)}
+
+

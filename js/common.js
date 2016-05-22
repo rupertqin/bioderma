@@ -166,7 +166,7 @@ var app = {
     },
     
     gotoMall: function() {
-        // location.href = ''
+        location.href = 'product.html'
     }
 }
 
