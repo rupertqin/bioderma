@@ -33,3 +33,5 @@ NodeList.prototype.remove = function () {
     });
     return this;
 };
+
+export {$, $$}
