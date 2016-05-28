@@ -12,13 +12,13 @@ body.animate {height: 1862px;background: url(/img/bg.jpg) no-repeat 0 0;position
 .txt-6 {left: 569px;top: 1385px;}
 .txt-7 {left: 569px;top: 1385px;}
 .txt-8 {left: 389px;top: 250px;}
-.red-bottle {left: 349px;top: 67px; }
-.red-bottle-lid {left: 36px;top: -16px;}
-.blue-bottle {left: 612px;top: 252px;}
+.red-bottle {left: 419px;top: 132px; }
+.red-bottle-lid {left: 35px;top: -16px;}
+.blue-bottle {left: 582px;top: 132px;}
 .blue-bottle-lid {left: 37px;top: -16px;}
 .bubble {left: 36px;top: 622px;}
-.droplet-red {left: 236px;top: 352px; }
-.droplet-blue {left: 236px;top: 352px; }
+.droplet-red-img {left: 236px;top: 352px; width: 100px;height: 100px;background-image: url(/img/droplet-red.gif); background-size: 100px 100px;}
+.droplet-blue-img {left: 236px;top: 352px;  width: 100px;height: 100px;background-image: url(/img/droplet-blue.gif); background-size: 100px 100px;}
 .pipe-red {left: 37px;top: 534px; }
 .pipe-blue {left: 37px;top: 534px; }
 .blue-bottle-incling {left: 0;top: 0; }
