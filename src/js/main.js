@@ -180,11 +180,54 @@ var app = {
 
 
 
+class IndexAnimate {
+    constructor() {
+        var self = this
+        this.intervalBottle = undefined
+        this.bottlePosture()
+        this.quiverBottle($$('.blue-bottle'))
+        this.goAni()
+        
+        setTimeout(function(){
+            self.quiverBottle($$('.red-bottle'))
+        }, 100)
+    }
+    
+    bottlePosture() {
+        TweenMax.to($$('.blue-bottle'), 0, {rotation: -15,transformOrigin: "center bottom", scale: 1.35});
+        TweenMax.to($$('.red-bottle'), 0, {rotation: 15,transformOrigin: "center bottom", scale: 1.35});
+    }
+    
+    goAni() {
+        TweenMax.to($$('.go'), 1, {yoyo: true, scale: 1.15, repeat: -1});
+    }
+    
+    quiverBottle(el, ts) {
+        ts = ts || 0.1
+        function quiverOnce() {
+            TweenMax.to(el, ts, {
+                rotation: '-=1', 
+                yoyo: true,
+                repeat: 8,
+                onComplete: function() {
+                    TweenMax.to(el, ts, {rotation: '+=1',transformOrigin: "center bottom"});
+                },
+                transformOrigin: "center bottom"});
+        }
+        quiverOnce()
+        this.intervalBottle = setInterval(quiverOnce, 3500)
+    }
+}
+
 
 
 
 
 $('body')[0].onload = function() {
-    app.init()
+    if ($$('body#index-page')) {
+        var indexAnimate = new IndexAnimate()
+    } else if($$('body#animate-page')) {
+        app.init()
+    }
 }
 

@@ -13,8 +13,9 @@ body.animate {height: 1862px;background: url(/img/bg.jpg) no-repeat 0 0;position
 .txt-7 {left: 569px;top: 1385px;}
 .txt-8 {left: 389px;top: 250px;}
 .red-bottle {left: 349px;top: 67px; }
-.red-bottle-lid {left: 112px;top: 75px;}
+.red-bottle-lid {left: 36px;top: -16px;}
 .blue-bottle {left: 612px;top: 252px;}
+.blue-bottle-lid {left: 37px;top: -16px;}
 .bubble {left: 36px;top: 622px;}
 .droplet-red {left: 236px;top: 352px; }
 .droplet-blue {left: 236px;top: 352px; }
@@ -23,3 +24,12 @@ body.animate {height: 1862px;background: url(/img/bg.jpg) no-repeat 0 0;position
 .blue-bottle-incling {left: 0;top: 0; }
 
 
+#index-page {}
+#index-page .go{left: 288px; top: 461px;}
+#index-page .index-girl{left: 228px; top: 731px;}
+#index-page .blue-bottle{left: 188px; top: 641px;
+     /*transform: matrix(1.3523, -0.362347, 0.362347, 1.3523, 0, 0);*/
+ }
+#index-page .red-bottle{left: 458px; top: 626px; 
+    /*transform: matrix(1.3523, 0.362347, -0.362347, 1.3523, 0, 0);*/
+}
