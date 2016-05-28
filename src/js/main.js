@@ -16,7 +16,6 @@ var app = {
         // this.writeTrueSize()
         this.quiverBottle($('.red-bottle:not(.glow)')[0])
         this.touchBottle($('.red-bottle'), this.redBottleToLeftTop.bind(this))
-            
     },
     
     writeTrueSize: function() {
@@ -69,7 +68,7 @@ var app = {
         var delay = 0.5
         var $elGlow = $('.red-bottle.glow')[0]
         var $el = $('.red-bottle:not(.glow)')[0]
-        var $lid = $('.red-bottle .lid')[0]
+        var $lid = $('.red-bottle-lid')[0]
         
         // bottle move to lefttop
         var aniGlowProp = {

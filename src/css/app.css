@@ -1,28 +1,25 @@
-@import '~sprite.css'
-
 html,body { }
-body.animate {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: relative;}
-.thing {position: absolute;background: url() no-repeat 0 0;}
-.girl-sad {bottom: 4px;left: 24px;background-image: url(../img/girl_sad.png);}
-.girl-smile {bottom: 10px;left: 68px;background-image: url(../img/girl_smile.png);}
-.girl-big-smile {bottom: 10px;left: 68px;background-image: url(../img/girl_big_smile.png);}
-.txt-1 {left: 523px;top: 1377px;background-image: url(../img/txt_1.png); }
-.txt-2 {left: 34px;top: 151px;background-image: url(../img/txt_2.png); }
-.txt-3 {left: 352px;top: 310px;background-image: url(../img/txt_3.png); }
-.txt-4 {left: 234px;top: 469px;background-image: url(../img/txt_4.png); }
-.txt-5 {left: 34px;top: 151px;background-image: url(../img/txt_5.png); }
-.txt-6 {left: 569px;top: 1385px;background-image: url(../img/txt_6.png); }
-.txt-7 {left: 569px;top: 1385px;background-image: url(../img/txt_7.png); }
-.txt-8 {left: 389px;top: 250px;background-image: url(../img/txt_8.png); }
-.red-bottle {left: 349px;top: 67px;background-image: url(../img/red_bottle.png); }
-.red-bottle .lid {left: 112px;top: 75px;width: 68px;height: 22px;background-image: url(../img/red_bottle_lid.png); }
-.red-bottle.glow {background-image: url(../img/red_bottle_glow.png);}
-.blue-bottle {left: 612px;top: 252px;background-image: url(../img/blue_bottle.png); }
-.bubble {left: 36px;top: 622px;background-image: url(../img/bubble.png); }
-.droplet-red {left: 236px;top: 352px;background-image: url(../img/droplet_red.png); }
-.droplet-blue {left: 236px;top: 352px;background-image: url(../img/droplet_blue.png); }
-.pipe-red {left: 37px;top: 534px;background-image: url(../img/pipe_red.png); }
-.pipe-blue {left: 37px;top: 534px;background-image: url(../img/pipe_blue.png); }
-.blue-bottle-incling {left: 0;top: 0;background-image: url(../img/blue_bottle_incling.jpg)}
+body.animate {height: 1862px;background: url(/img/bg.jpg) no-repeat 0 0;position: relative;}
+.thing {position: absolute;background-repeat: no-repeat; background-position:0 0;}
+.girl-sad {bottom: 4px;left: 24px;}
+.girl-smile {bottom: 10px;left: 68px;}
+.girl-big-smile {bottom: 10px;left: 68px;}
+.txt-1 {left: 523px;top: 1377px;}
+.txt-2 {left: 34px;top: 151px;}
+.txt-3 {left: 352px;top: 310px; }
+.txt-4 {left: 234px;top: 469px;}
+.txt-5 {left: 34px;top: 151px;}
+.txt-6 {left: 569px;top: 1385px;}
+.txt-7 {left: 569px;top: 1385px;}
+.txt-8 {left: 389px;top: 250px;}
+.red-bottle {left: 349px;top: 67px; }
+.red-bottle-lid {left: 112px;top: 75px;}
+.blue-bottle {left: 612px;top: 252px;}
+.bubble {left: 36px;top: 622px;}
+.droplet-red {left: 236px;top: 352px; }
+.droplet-blue {left: 236px;top: 352px; }
+.pipe-red {left: 37px;top: 534px; }
+.pipe-blue {left: 37px;top: 534px; }
+.blue-bottle-incling {left: 0;top: 0; }
 
 

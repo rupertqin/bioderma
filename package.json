@@ -6,7 +6,9 @@
   "bin": {
     "bioderma-h5": "rename.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "extract-text-webpack-plugin": "^1.0.1"
+  },
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-eslint": "^3.1.23",

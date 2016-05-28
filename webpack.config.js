@@ -1,15 +1,16 @@
-var path = require('path');
-
-var SpritesmithPlugin = require('webpack-spritesmith');
+'use strict'
+const path = require('path');
+const SpritesmithPlugin = require('webpack-spritesmith');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
         app: ["./src/js/main.js"]
     },
     output: {
-        path: __dirname + '/build/js/',
+        path: __dirname + '/build',
         filename: "[name].bundle.js",
-        publicPath: '/build/js',
+        publicPath: '/build',
         sourceMapFilename: '[file].map'
     },
     devtool: 'source-map',
@@ -19,7 +20,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.scss$/, loader: 'style!raw!autoprefixer?{browsers:["safari >= 7", "Firefox 15", "ie >= 8", "chrome >= 34"]}!sass' },
-            { test: /\.css$/, loader: 'style!raw' },
+            // { test: /\.css$/, loader: 'style!raw' },
+            { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "raw-loader") },
             // { test: /\.(png|gif|jpg)$/, loader: 'file?name=img/[name].[ext]&path=../../img/[name].[ext]' },
             { test: /\.png$/, loader: 'file?name=i/[hash].[ext]' },
             { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel'}
@@ -28,7 +30,7 @@ module.exports = {
     plugins: [
         new SpritesmithPlugin({
             src: {
-                cwd: path.resolve(__dirname, 'img'),
+                cwd: path.resolve(__dirname, 'src/img'),
                 glob: '*.png'
             },
             target: {
@@ -37,16 +39,17 @@ module.exports = {
                     format: 'css',
                     formatOpts: {
                         cssSelector: function(sprite) {
-                            return '.' + sprite.name.replace('_', '-')
+                            return '.' + sprite.name.replace(/_/g, '-')
                         }
                     }
                 }]]
             },
             apiOptions: {
-                cssImageRef: "build/img/sprite.png"
+                cssImageRef: "/build/img/sprite.png"
             }
             
         })
+        ,new ExtractTextPlugin("[name].css")
     ],
     devServer: {
         contentBase: "./",
