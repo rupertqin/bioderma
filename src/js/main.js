@@ -1,7 +1,9 @@
 import TweenMax from 'gsap'
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
 import {$, $$} from './util'
-
+import '../css/normalize.css'
+import '../css/app.css'
+import '../../build/css/sprite.css'
 
 
 var noop = function() {}
@@ -11,7 +13,7 @@ var app = {
     init: function() {
         this.intervalBottle = undefined
         
-        this.writeTrueSize()
+        // this.writeTrueSize()
         this.quiverBottle($('.red-bottle:not(.glow)')[0])
         this.touchBottle($('.red-bottle'), this.redBottleToLeftTop.bind(this))
             

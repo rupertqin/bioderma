@@ -1,0 +1,138 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.blue-bottle {
+  background-image: url(build/img/sprite.png);
+  background-position: -2351px -421px;
+  width: 87px;
+  height: 221px;
+}
+.bubble {
+  background-image: url(build/img/sprite.png);
+  background-position: 0px -812px;
+  width: 687px;
+  height: 531px;
+}
+.droplet-blue {
+  background-image: url(build/img/sprite.png);
+  background-position: -1208px -966px;
+  width: 208px;
+  height: 197px;
+}
+.droplet-red {
+  background-image: url(build/img/sprite.png);
+  background-position: -1302px -812px;
+  width: 158px;
+  height: 151px;
+}
+.girl-big_smile {
+  background-image: url(build/img/sprite.png);
+  background-position: -1356px 0px;
+  width: 503px;
+  height: 734px;
+}
+.girl-sad {
+  background-image: url(build/img/sprite.png);
+  background-position: 0px -1343px;
+  width: 444px;
+  height: 755px;
+}
+.girl-smile {
+  background-image: url(build/img/sprite.png);
+  background-position: -1859px 0px;
+  width: 492px;
+  height: 734px;
+}
+.pipe-blue {
+  background-image: url(build/img/sprite.png);
+  background-position: -678px 0px;
+  width: 678px;
+  height: 812px;
+}
+.pipe-red {
+  background-image: url(build/img/sprite.png);
+  background-position: 0px 0px;
+  width: 678px;
+  height: 812px;
+}
+.red-bottle_glow {
+  background-image: url(build/img/sprite.png);
+  background-position: -687px -812px;
+  width: 298px;
+  height: 515px;
+}
+.red-bottle_lid {
+  background-image: url(build/img/sprite.png);
+  background-position: -2351px -815px;
+  width: 68px;
+  height: 22px;
+}
+.red-bottle {
+  background-image: url(build/img/sprite.png);
+  background-position: -1859px -734px;
+  width: 298px;
+  height: 515px;
+}
+.txt-1 {
+  background-image: url(build/img/sprite.png);
+  background-position: -444px -1343px;
+  width: 128px;
+  height: 368px;
+}
+.txt-2 {
+  background-image: url(build/img/sprite.png);
+  background-position: -985px -966px;
+  width: 223px;
+  height: 205px;
+}
+.txt-3 {
+  background-image: url(build/img/sprite.png);
+  background-position: -2351px -642px;
+  width: 49px;
+  height: 173px;
+}
+.txt-4 {
+  background-image: url(build/img/sprite.png);
+  background-position: -1859px -1249px;
+  width: 368px;
+  height: 69px;
+}
+.txt-5 {
+  background-image: url(build/img/sprite.png);
+  background-position: -985px -812px;
+  width: 317px;
+  height: 154px;
+}
+.txt-6 {
+  background-image: url(build/img/sprite.png);
+  background-position: -2351px 0px;
+  width: 107px;
+  height: 421px;
+}
+.txt-7 {
+  background-image: url(build/img/sprite.png);
+  background-position: -2157px -734px;
+  width: 160px;
+  height: 433px;
+}
+.txt-8 {
+  background-image: url(build/img/sprite.png);
+  background-position: -1460px -812px;
+  width: 247px;
+  height: 80px;
+}
