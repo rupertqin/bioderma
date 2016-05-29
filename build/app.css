@@ -430,17 +430,31 @@ body.animate {height: 1862px;background: url(/img/bg.jpg) no-repeat 0 0;position
 .txt-6 {left: 569px;top: 1385px;}
 .txt-7 {left: 569px;top: 1385px;}
 .txt-8 {left: 389px;top: 250px;}
-.red-bottle {left: 349px;top: 67px; }
-.red-bottle-lid {left: 112px;top: 75px;}
-.blue-bottle {left: 612px;top: 252px;}
+.red-bottle {left: 419px;top: 132px; }
+.red-bottle-lid {left: 35px;top: -16px;}
+.blue-bottle {left: 582px;top: 132px;}
+.blue-bottle-lid {left: 37px;top: -16px;}
 .bubble {left: 36px;top: 622px;}
-.droplet-red {left: 236px;top: 352px; }
-.droplet-blue {left: 236px;top: 352px; }
+.droplet-red-img {left: 236px;top: 352px; width: 100px;height: 100px;background-image: url(/img/droplet-red.gif); background-size: 100px 100px;}
+.droplet-blue-img {left: 236px;top: 352px;  width: 100px;height: 100px;background-image: url(/img/droplet-blue.gif); background-size: 100px 100px;}
 .pipe-red {left: 37px;top: 534px; }
 .pipe-blue {left: 37px;top: 534px; }
 .blue-bottle-incling {left: 0;top: 0; }
+div[class*=txt-step] {left: 34px;top: 151px;color: #e93e74; font-size: 35px;}
+div[class*=txt-step] h4 {font-size: 45px;margin: 0 0 20px;}
+div.txt-step2 {left: 34px;top: 151px; color: #0383b7}
+
+#index-page {}
+#index-page .go{left: 288px; top: 461px;}
+#index-page .index-girl{left: 228px; top: 731px;}
+#index-page .blue-bottle{left: 188px; top: 641px;
+ }
+#index-page .red-bottle{left: 458px; top: 626px; 
+}
 
 
+#product-page{}
+#product-page .tmall-link {left: 190px;top: 1030px;}
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.
 
@@ -459,17 +473,17 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
-.blue-bottle-incling {
+.blue-bottle-lid {
   background-image: url(/build/img/sprite.png);
-  background-position: -1859px -734px;
-  width: 371px;
-  height: 420px;
+  background-position: -2352px -594px;
+  width: 69px;
+  height: 24px;
 }
 .blue-bottle {
   background-image: url(/build/img/sprite.png);
-  background-position: -2230px -734px;
-  width: 87px;
-  height: 221px;
+  background-position: -1009px -812px;
+  width: 144px;
+  height: 349px;
 }
 .bubble {
   background-image: url(/build/img/sprite.png);
@@ -479,20 +493,20 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .droplet-blue {
   background-image: url(/build/img/sprite.png);
-  background-position: -551px -1343px;
+  background-position: -795px -1343px;
   width: 208px;
   height: 197px;
 }
 .droplet-red {
   background-image: url(/build/img/sprite.png);
-  background-position: -2176px -1154px;
+  background-position: -1613px -812px;
   width: 158px;
   height: 151px;
 }
 .girl-big-smile {
   background-image: url(/build/img/sprite.png);
   background-position: -1356px 0px;
-  width: 503px;
+  width: 504px;
   height: 734px;
 }
 .girl-sad {
@@ -503,9 +517,21 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .girl-smile {
   background-image: url(/build/img/sprite.png);
-  background-position: -1859px 0px;
+  background-position: -1860px 0px;
   width: 492px;
   height: 734px;
+}
+.go {
+  background-image: url(/build/img/sprite.png);
+  background-position: -1003px -1343px;
+  width: 172px;
+  height: 171px;
+}
+.index-girl {
+  background-image: url(/build/img/sprite.png);
+  background-position: -687px -812px;
+  width: 322px;
+  height: 476px;
 }
 .pipe-blue {
   background-image: url(/build/img/sprite.png);
@@ -521,67 +547,73 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .red-bottle-glow {
   background-image: url(/build/img/sprite.png);
-  background-position: -985px -812px;
+  background-position: -1860px -734px;
   width: 298px;
   height: 515px;
 }
 .red-bottle-lid {
   background-image: url(/build/img/sprite.png);
-  background-position: -2279px -955px;
+  background-position: -2352px -618px;
   width: 68px;
   height: 22px;
 }
 .red-bottle {
   background-image: url(/build/img/sprite.png);
-  background-position: -687px -812px;
-  width: 298px;
-  height: 515px;
+  background-position: -1153px -812px;
+  width: 143px;
+  height: 348px;
+}
+.tmall-link {
+  background-image: url(/build/img/sprite.png);
+  background-position: -1296px -966px;
+  width: 382px;
+  height: 120px;
 }
 .txt-1 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1443px -812px;
+  background-position: -444px -1343px;
   width: 128px;
   height: 368px;
 }
 .txt-2 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1571px -812px;
+  background-position: -572px -1343px;
   width: 223px;
   height: 205px;
 }
 .txt-3 {
   background-image: url(/build/img/sprite.png);
-  background-position: -2230px -955px;
+  background-position: -2352px -421px;
   width: 49px;
   height: 173px;
 }
 .txt-4 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1356px -734px;
+  background-position: -1860px -1249px;
   width: 368px;
   height: 69px;
 }
 .txt-5 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1859px -1154px;
+  background-position: -1296px -812px;
   width: 317px;
   height: 154px;
 }
 .txt-6 {
   background-image: url(/build/img/sprite.png);
-  background-position: -444px -1343px;
+  background-position: -2352px 0px;
   width: 107px;
   height: 421px;
 }
 .txt-7 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1283px -812px;
+  background-position: -2158px -734px;
   width: 160px;
   height: 433px;
 }
 .txt-8 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1571px -1017px;
+  background-position: -1009px -1161px;
   width: 247px;
   height: 80px;
 }

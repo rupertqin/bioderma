@@ -1,7 +1,6 @@
 import 'gsap'
 
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
-import SplitText from'./SplitText'
 import {$, $$} from './util'
 import '../css/normalize.css'
 import '../css/app.css'
