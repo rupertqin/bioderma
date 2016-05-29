@@ -154,10 +154,10 @@ class AnimatePage {
         function moveOne(el, resolve) {
             var tl = new TimelineMax()
             tl.to(el, 0.5, {opacity: 1}, 1);
-            tl.to(el, 2.5, {x: -156, y: 550,ease: Linear.easeNone});
-            tl.to(el, 2, {x: 214, y: 350,ease: Linear.easeNone});
-            tl.to(el, 1.5, {x: 314, y: 650,ease: Linear.easeNone});
-            tl.to(el, 1.5, {x: 14, y: 910,ease: Linear.easeNone, onComplete: resolve});
+            tl.to(el, 2.5, {x: -156, y: 640,ease: Linear.easeNone});
+            tl.to(el, 2, {x: 254, y: 430,ease: Linear.easeNone});
+            tl.to(el, 1.5, {x: 314, y: 720,ease: Linear.easeNone});
+            tl.to(el, 1.5, {x: 14, y: 1050,ease: Linear.easeNone, onComplete: resolve});
         }
         return Promise.all(elArr.map((el, i)=> {
             return new Promise((resolve, reject)=> {
