@@ -45,7 +45,7 @@ module.exports = {
                 }]]
             },
             apiOptions: {
-                cssImageRef: "/build/img/sprite.png"
+                cssImageRef: "img/sprite.png"
             }
             
         })
