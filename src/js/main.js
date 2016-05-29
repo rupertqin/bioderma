@@ -37,8 +37,8 @@ class AnimatePage {
                 return this.prepareSecondDroplet()
             })
             .then(()=> {
-                TweenMax.to($$('.pipe-red'), 2, {opacity: 0});
-                TweenMax.to($$('.pipe-blue'), 2, {delay: 0.5,opacity: 1})
+                TweenMax.to($$('.pipe-red'), 3, {opacity: 0});
+                TweenMax.to($$('.pipe-blue'), 3, {delay: 0.5,opacity: 1})
                 TweenMax.to($$('.txt-8'), 1, {opacity: 1})
                 return this.dropletMove($('.droplet-blue-img'))
             })
@@ -78,10 +78,11 @@ class AnimatePage {
         var $h4 = $step.querySelector('h4')
         var $txt = $step.querySelector('div')
         TweenMax.to($txt, 0, {opacity: 1, transformOrigin: "center bottom"});
+        var tl = new TimelineMax()
         var pat = /([\u4e00-\u9fa5\!])/g
         var splitText = $txt.innerHTML.replace(pat, '<span style="opacity:0;">$1</span>')
         $txt.innerHTML = splitText
-        this.tl.staggerTo($txt.querySelectorAll('span'), 1, {opacity:1, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:Back.easeOut}, 0.2, "+=0");
+        tl.staggerTo($txt.querySelectorAll('span'), 1, {opacity:1, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:Back.easeOut}, 0.2, "+=0");
     }
     
     bottlePosture() {
@@ -124,18 +125,14 @@ class AnimatePage {
     
     redBottleToLeftTop(resolve) {
         var self = this
-        var delay = 0.5
         var $el = $$('.red-bottle')
         var $lid = $$('.red-bottle-lid')
-        
-        var aniProp = {
+        this.tl.to($el, 1, {
             x: -504, y: -570,
             scale: 1.3,
             ease: 'Power4',
             rotation: 150,
-            delay: delay,
-            transformOrigin: "center bottom"}
-        this.tl.to($el, 1, aniProp);
+            transformOrigin: "center bottom"});
         
         // text fade
         TweenMax.staggerTo([$$('.txt-step1'), $('.txt-3')], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
@@ -194,10 +191,11 @@ class AnimatePage {
 
         // hide & show
         $('.droplet-red, .txt-1, .txt-step1, .txt-4,.girl-sad, .red-bottle').remove()
-        ;[]['forEach'].call($('.girl-smile, .pipe-red, .txt-3, .txt-step2, .txt-6, #scene-3 .bubble'), function (el) {
+        ;[]['forEach'].call($('.girl-smile, .pipe-red, .txt-3, .txt-6, #scene-3 .bubble'), function (el) {
             el.style.opacity = 1
         });
         TweenMax.to(window, 2, {scrollTo:{y:0}, ease:Power2.easeOut, onComplete: ()=> {
+            TweenMax.to($$('.txt-step2'), 0.5, {opacity: 1,transformOrigin: "center bottom"});
             this.showStepTyping($$('.txt-step2'))
             this.quiverBottle($$('.blue-bottle'))
         }});
