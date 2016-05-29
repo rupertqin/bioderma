@@ -22,14 +22,18 @@ body.animate {height: 1862px;background: url(/img/bg.jpg) no-repeat 0 0;position
 .pipe-red {left: 37px;top: 534px; }
 .pipe-blue {left: 37px;top: 534px; }
 .blue-bottle-incling {left: 0;top: 0; }
-
+div[class*=txt-step] {left: 34px;top: 151px;color: #e93e74; font-size: 35px;}
+div[class*=txt-step] h4 {font-size: 45px;margin: 0 0 20px;}
+div.txt-step2 {left: 34px;top: 151px; color: #0383b7}
 
 #index-page {}
 #index-page .go{left: 288px; top: 461px;}
 #index-page .index-girl{left: 228px; top: 731px;}
 #index-page .blue-bottle{left: 188px; top: 641px;
-     /*transform: matrix(1.3523, -0.362347, 0.362347, 1.3523, 0, 0);*/
  }
 #index-page .red-bottle{left: 458px; top: 626px; 
-    /*transform: matrix(1.3523, 0.362347, -0.362347, 1.3523, 0, 0);*/
 }
+
+
+#product-page{}
+#product-page .tmall-link {left: 190px;top: 1030px;}

@@ -66,7 +66,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .go {
   background-image: url(/build/img/sprite.png);
-  background-position: -1296px -966px;
+  background-position: -1003px -1343px;
   width: 172px;
   height: 171px;
 }
@@ -78,13 +78,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .pipe-blue {
   background-image: url(/build/img/sprite.png);
-  background-position: 0px 0px;
+  background-position: -678px 0px;
   width: 678px;
   height: 812px;
 }
 .pipe-red {
   background-image: url(/build/img/sprite.png);
-  background-position: -678px 0px;
+  background-position: 0px 0px;
   width: 678px;
   height: 812px;
 }
@@ -105,6 +105,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: -1153px -812px;
   width: 143px;
   height: 348px;
+}
+.tmall-link {
+  background-image: url(/build/img/sprite.png);
+  background-position: -1296px -966px;
+  width: 382px;
+  height: 120px;
 }
 .txt-1 {
   background-image: url(/build/img/sprite.png);
@@ -150,7 +156,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .txt-8 {
   background-image: url(/build/img/sprite.png);
-  background-position: -1468px -966px;
+  background-position: -1009px -1161px;
   width: 247px;
   height: 80px;
 }

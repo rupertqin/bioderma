@@ -1,5 +1,7 @@
-import TweenMax from 'gsap'
+import 'gsap'
+
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
+import SplitText from'./SplitText'
 import {$, $$} from './util'
 import '../css/normalize.css'
 import '../css/app.css'
@@ -18,7 +20,9 @@ class AnimatePage {
         this.bottlePosture()
         this.scan()
             .then(() => {
-                TweenMax.staggerTo([$$('.txt-3'), $$('.txt-2')], 1, {delay: 0.5,opacity: 1}, 0.5);
+                TweenMax.staggerTo([$$('.txt-step1')], 0.5, {opacity: 1});
+                this.showStepTyping($$('.txt-step1'))
+                TweenMax.staggerTo([$$('.txt-3')], 1, {delay: 0.5,opacity: 1}, 0.5);
                 this.quiverBottle($$('.red-bottle'))
                 return this.bindBottleAction($('.red-bottle'), this.redBottleToLeftTop.bind(this))
             })
@@ -47,10 +51,11 @@ class AnimatePage {
     scan() {
         const diff = $$('body').clientHeight - window.innerHeight
         this.tl.to(window, 0, {delay: 1,scrollTo:{y:0}});
-        this.tl.to(window, 0.5, {scrollTo:{y: diff}, ease: Linear.easeNone});
-        TweenMax.to($$('.red-bottle'), 0.5, {delay: 1.5,scale: 1, y: 30,transformOrigin: "center bottom"});
+        this.tl.to(window, 1.5, {scrollTo:{y: diff}, ease: Linear.easeNone, onComplete: ()=> {
+            TweenMax.to($$('.red-bottle'), 0, {scale: 1, y: 30,transformOrigin: "center bottom"});
+        }});
         return new Promise((resolve, reject) => {
-            this.tl.to(window, 0.5, {scrollTo:{y:0}, ease: Linear.easeNone, onComplete: ()=> {
+            this.tl.to(window, 1.5, {scrollTo:{y:0}, ease: Linear.easeNone, onComplete: ()=> {
                 resolve(1)
             }});
         })
@@ -68,6 +73,16 @@ class AnimatePage {
                 el.style.height = e.target.height + 'px'
             }
         })
+    }
+    
+    showStepTyping($step) {
+        var $h4 = $step.querySelector('h4')
+        var $txt = $step.querySelector('div')
+        TweenMax.to($txt, 0, {opacity: 1, transformOrigin: "center bottom"});
+        var pat = /([\u4e00-\u9fa5\!])/g
+        var splitText = $txt.innerHTML.replace(pat, '<span style="opacity:0;">$1</span>')
+        $txt.innerHTML = splitText
+        this.tl.staggerTo($txt.querySelectorAll('span'), 1, {opacity:1, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:Back.easeOut}, 0.2, "+=0");
     }
     
     bottlePosture() {
@@ -124,7 +139,7 @@ class AnimatePage {
         this.tl.to($el, 1, aniProp);
         
         // text fade
-        TweenMax.staggerTo([$('.txt-3')[0], $('.txt-2')[0]], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
+        TweenMax.staggerTo([$$('.txt-step1'), $('.txt-3')], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
         
         // open lid 
         this.tl.to($lid, 0.6, {rotation: 150,
@@ -179,12 +194,14 @@ class AnimatePage {
         $blueBottle.style.top = '165px'
 
         // hide & show
-        $('.droplet-red, .txt-1, .txt-2, .txt-4,.girl-sad, .red-bottle').remove()
-        ;[]['forEach'].call($('.girl-smile, .pipe-red, .txt-3, .txt-5, .txt-6, #scene-3 .bubble'), function (el) {
+        $('.droplet-red, .txt-1, .txt-step1, .txt-4,.girl-sad, .red-bottle').remove()
+        ;[]['forEach'].call($('.girl-smile, .pipe-red, .txt-3, .txt-step2, .txt-6, #scene-3 .bubble'), function (el) {
             el.style.opacity = 1
         });
-        TweenMax.to(window, 2, {scrollTo:{y:0}, ease:Power2.easeOut});
-        this.quiverBottle($$('.blue-bottle'))
+        TweenMax.to(window, 2, {scrollTo:{y:0}, ease:Power2.easeOut, onComplete: ()=> {
+            this.showStepTyping($$('.txt-step2'))
+            this.quiverBottle($$('.blue-bottle'))
+        }});
         return this.bindBottleAction($('.blue-bottle'), this.blueBottleToLeftTop.bind(this))
     }
     
@@ -204,7 +221,7 @@ class AnimatePage {
         this.tl.to($el, 1, aniProp);
         
         // text fade
-        TweenMax.staggerTo([$$('.txt-5'), $$('.txt-3')], 1, {scale: .7,opacity: 0}, 0.5);
+        TweenMax.staggerTo([$$('.txt-3'), $$('.txt-step2')], 1, {scale: .7,opacity: 0}, 0.5);
         
         // open lid 
         this.tl.to($lid, 0.6, {rotation: 150,
@@ -221,7 +238,7 @@ class AnimatePage {
     }
     
     gotoMall() {
-        // location.href = 'product.html'
+        location.href = 'product.html'
     }
 }
 
@@ -265,11 +282,23 @@ class IndexAnimate {
 }
 
 
+class ProductPage {
+    constructor() {
+        this.goAni()
+    }
+    
+    goAni() {
+        TweenMax.to($$('.tmall-link'), 1, {yoyo: true, scale: 1.05, repeat: -1});
+    }
+}
+
 $('body')[0].onload = function() {
     if ($$('body#index-page')) {
         var indexAnimate = new IndexAnimate()
     } else if($$('body#animate-page')) {
         window.animatePage = new AnimatePage()
+    } else if($$('body#product-page')) {
+        window.productPage = new ProductPage()
     }
 }
 
