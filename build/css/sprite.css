@@ -127,7 +127,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .txt-3 {
   background-image: url(img/sprite.png);
   background-position: -2352px -421px;
-  width: 49px;
+  width: 50px;
   height: 173px;
 }
 .txt-4 {

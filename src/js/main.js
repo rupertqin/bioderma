@@ -95,11 +95,11 @@ class AnimatePage {
         ts = ts || 0.1
         function quiverOnce() {
             TweenMax.to(el, ts, {
-                rotation: '-=2', 
+                rotation: '-=5', 
                 yoyo: true,
                 repeat: 8,
                 onComplete: function() {
-                    TweenMax.to(el, ts, {rotation: '+=2',transformOrigin: "center bottom"});
+                    TweenMax.to(el, ts, {rotation: '+=5',transformOrigin: "center bottom"});
                 },
                 transformOrigin: "center bottom"});
         }
