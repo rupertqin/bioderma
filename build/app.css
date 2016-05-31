@@ -491,18 +491,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 687px;
   height: 531px;
 }
-.droplet-blue {
-  background-image: url(img/sprite.png);
-  background-position: -795px -1343px;
-  width: 208px;
-  height: 197px;
-}
-.droplet-red {
-  background-image: url(img/sprite.png);
-  background-position: -1613px -812px;
-  width: 158px;
-  height: 151px;
-}
 .girl-big-smile {
   background-image: url(img/sprite.png);
   background-position: -1356px 0px;
@@ -523,7 +511,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .go {
   background-image: url(img/sprite.png);
-  background-position: -1003px -1343px;
+  background-position: -1296px -932px;
   width: 172px;
   height: 171px;
 }
@@ -565,7 +553,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .tmall-link {
   background-image: url(img/sprite.png);
-  background-position: -1296px -966px;
+  background-position: -1296px -812px;
   width: 382px;
   height: 120px;
 }
@@ -575,16 +563,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 128px;
   height: 368px;
 }
-.txt-2 {
-  background-image: url(img/sprite.png);
-  background-position: -572px -1343px;
-  width: 223px;
-  height: 205px;
-}
 .txt-3 {
   background-image: url(img/sprite.png);
   background-position: -2352px -421px;
-  width: 49px;
+  width: 50px;
   height: 173px;
 }
 .txt-4 {
@@ -592,12 +574,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: -1860px -1249px;
   width: 368px;
   height: 69px;
-}
-.txt-5 {
-  background-image: url(img/sprite.png);
-  background-position: -1296px -812px;
-  width: 317px;
-  height: 154px;
 }
 .txt-6 {
   background-image: url(img/sprite.png);
@@ -613,7 +589,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .txt-8 {
   background-image: url(img/sprite.png);
-  background-position: -1009px -1161px;
+  background-position: -1468px -932px;
   width: 247px;
   height: 80px;
 }

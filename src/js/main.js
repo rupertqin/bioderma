@@ -135,7 +135,10 @@ class AnimatePage {
             transformOrigin: "center bottom"});
         
         // text fade
-        TweenMax.staggerTo([$$('.txt-step1'), $('.txt-3')], 1, {delay: 0.5,scale: .7,opacity: 0}, 0.5);
+        TweenMax.staggerTo([$$('.txt-step1'), $('.txt-3')], 1, {delay: 0.5,scale: .7,opacity: 0,onComplete: function() {
+            // scale to origin size
+            TweenMax.to($('.txt-3'), 0, {delay: 1.5, scale: 1})    
+        }}, 0.5);
         
         // open lid 
         this.tl.to($lid, 0.6, {rotation: 150,
@@ -194,7 +197,7 @@ class AnimatePage {
         ;[]['forEach'].call($('.girl-smile, .pipe-red, .txt-3, .txt-6, #scene-3 .bubble'), function (el) {
             el.style.opacity = 1
         });
-        TweenMax.to(window, 2, {scrollTo:{y:0}, ease:Power2.easeOut, onComplete: ()=> {
+        TweenMax.to(window, 1, {scrollTo:{y:0}, ease:Power2.easeOut, onComplete: ()=> {
             TweenMax.to($$('.txt-step2'), 0.5, {opacity: 1,transformOrigin: "center bottom"});
             this.showStepTyping($$('.txt-step2'))
             this.quiverBottle($$('.blue-bottle'))
