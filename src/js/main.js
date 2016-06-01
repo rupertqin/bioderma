@@ -2,6 +2,7 @@ import 'gsap'
 
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
 import {$, $$} from './util'
+import './wx_share'
 import '../css/normalize.css'
 import '../css/app.css'
 import '../../build/css/sprite.css'
@@ -127,6 +128,7 @@ class AnimatePage {
         var self = this
         var $el = $$('.red-bottle')
         var $lid = $$('.red-bottle-lid')
+        _paq.push(['trackEvent', '水珠页面', '点击红瓶子','点击蓝瓶子']);
         this.tl.to($el, 1, {
             x: -504, y: -570,
             scale: 1.3,
@@ -211,6 +213,7 @@ class AnimatePage {
         var $el = $$('.blue-bottle')
         var $lid = $$('.blue-bottle-lid')
         
+        _paq.push(['trackEvent', '水珠页面', '点击蓝瓶子']);
         var aniProp = {
             x: -504, y: -570,
             scale: 1.3,
