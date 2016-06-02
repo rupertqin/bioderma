@@ -2,6 +2,7 @@
 
 var wx = require('wechat-jssdk')
 var config = require('./config')
+
 wx.initialize({
     "wechatRedirectHost": "http://127.0.0.1",
     "wechatToken": config.wechatToken,
@@ -16,7 +17,7 @@ module.exports = function(app, router) {
     })
     
     router.get('/api/wechat', function(req, res){
-        if(wx.jssdk.verifySignature(req.query)) {
+        if (wx.jssdk.verifySignature(req.query)) {
             res.send(req.query.echostr);
             return;
         }

@@ -298,14 +298,17 @@ class ProductPage {
 }
 
 function getSignature(fn) {
-    get('/get-signature', {}, fn)
+    get('/get-signature?url=' + location.href, {}, fn)
+}
+
+function trackImg() {
+        <img style="display:none;" src="http://218.244.145.245/mlog.php?campaign_id=zgkj-bdma&fromkol=<?php echo $fromkol; ?>"/>
+    var from = /from=([a-zA-Z0-9]+)/
 }
 
 getSignature((data)=> {
-    console.log('======= wechatSetting', wechatSetting)
     wechatSetting(data )
 })
-
 
 $('body')[0].onload = function() {
     
