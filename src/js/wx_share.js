@@ -2,10 +2,10 @@ import 'wx'
 var config = require('../../config')
 
 const shareConf = {
-    title: '贝德玛轻松两步曲邀您体验，肌肤立即“如愉得水”', // 分享标题
-    desc: '拯救肌肤，贝德玛来了！清洁+补水，只需简单两步。立即享受惊喜优惠，让你的肌肤“如愉得水”', // 分享描述
-    link: window.location.origin, // 分享链接
-    imgUrl: window.location.origin + '/img/pic.png', // 分享图标
+    title: config.title || '贝德玛轻松两步曲邀您体验，肌肤立即“如愉得水”', // 分享标题
+    desc: config.desc || '拯救肌肤，贝德玛来了！清洁+补水，只需简单两步。立即享受惊喜优惠，让你的肌肤“如愉得水”', // 分享描述
+    link: config.link || window.location.origin, // 分享链接
+    imgUrl: config.imgUrl || window.location.origin + '/img/pic.png', // 分享图标
     type: '', // 分享类型,music、video或link，不填默认为link
     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
     success: function () { 

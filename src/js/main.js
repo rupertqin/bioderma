@@ -1,6 +1,7 @@
 import 'gsap'
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
-import {$, $$, get, post} from './util'
+import moment from 'moment'
+import {$, $$, get, post, getParameterByName} from './util'
 import wechatSetting from './wx_share'
 import '../css/normalize.css'
 import '../css/app.css'
@@ -290,11 +291,29 @@ class ProductPage {
     }
     
     goAni() {
+        const from = getParameterByName('from', window.location.href)
         TweenMax.to($$('.tmall-link'), 1, {yoyo: true, scale: 1.05, repeat: -1});
-        $('.tmall-link').on('touchstart', (e)=> {
+        function cb(e) {
+            const linkUrl = e.target.href
+            e.preventDefault()
             _paq.push(['trackEvent', '优惠券页面', '链接淘宝','购买']);
-        })
+            const url = `http://218.244.145.245/api/contact/form?campaign_id=zgkj-bdma&token=imtravelzoo&fromkol=${from||''}&CZ_created=${moment().format('YYYY-MM-DD H:mm:ss')}`           
+            $$('body').insertAdjacentHTML('beforeend', `<img style="display:none;" src="${url}"/>`)
+            setTimeout(()=> {
+                location.href = linkUrl
+            }, 1 * 1000)
+        }
+        $('.tmall-link').on('touchstart', cb)
+        // $('.tmall-link').on('click', cb)
     }
+}
+
+function jsonpGet(url, callbackName) {
+    var scriptEl = document.createElement('script')
+    var tail = ~url.indexOf('?') ? '&' : '?' 
+    scriptEl.setAttribute('src', encodeURI(url) + tail + 'callback=' + callbackName)
+    scriptEl.setAttribute('type', 'text')
+    document.body.appendChild(scriptEl)
 }
 
 function getSignature(fn) {
@@ -302,13 +321,15 @@ function getSignature(fn) {
 }
 
 function trackImg() {
-        <img style="display:none;" src="http://218.244.145.245/mlog.php?campaign_id=zgkj-bdma&fromkol=<?php echo $fromkol; ?>"/>
-    var from = /from=([a-zA-Z0-9]+)/
+    var from = getParameterByName('from', window.location.href)
+    $$('body').insertAdjacentHTML('beforeend', `<img style="display:none;" src="http://218.244.145.245/mlog.php?campaign_id=zgkj-bdma&fromkol=${from}"/>`)
 }
 
 getSignature((data)=> {
     wechatSetting(data )
 })
+
+trackImg()
 
 $('body')[0].onload = function() {
     
