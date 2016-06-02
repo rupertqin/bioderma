@@ -317,7 +317,7 @@ function jsonpGet(url, callbackName) {
 }
 
 function getSignature(fn) {
-    get('/get-signature?url=' + location.href, {}, fn)
+    get('/get-signature?url=' + encodeURIComponent(location.href), {}, fn)
 }
 
 function trackImg() {
