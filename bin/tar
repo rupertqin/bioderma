@@ -1,0 +1,3 @@
+#!/bin/sh
+
+tar -cjf boiderma.tar.gz index.html animate.html product.html img/ build/  > /dev/null 
