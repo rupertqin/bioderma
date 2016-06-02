@@ -13,6 +13,9 @@ module.exports = {
         publicPath: '/build',
         sourceMapFilename: '[file].map'
     },
+    externals: {
+        "wx": "wx"
+    },
     devtool: 'source-map',
     resolve: {
         modulesDirectories: ["web_modules", "node_modules", "spritesmith-generated"]
@@ -50,10 +53,5 @@ module.exports = {
             
         })
         ,new ExtractTextPlugin("[name].css")
-    ],
-    devServer: {
-        contentBase: "./",
-        port: "4000",
-        host: "0.0.0.0"
-    }
+    ]
 };

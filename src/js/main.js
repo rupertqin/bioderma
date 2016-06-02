@@ -1,5 +1,4 @@
 import 'gsap'
-
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
 import {$, $$} from './util'
 import './wx_share'
