@@ -1,3 +1,3 @@
 #!/bin/sh
 
-tar -cjf boiderma.tar.gz index.html animate.html product.html img/ build/  > /dev/null 
+tar -cjf boiderma.tar.gz index.html animate.html product.html server.js webpack.config.js .babelrc bin/ img/ src/  build/  > /dev/null 

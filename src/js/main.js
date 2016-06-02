@@ -291,6 +291,9 @@ class ProductPage {
     
     goAni() {
         TweenMax.to($$('.tmall-link'), 1, {yoyo: true, scale: 1.05, repeat: -1});
+        $('.tmall-link').on('touchstart', (e)=> {
+            _paq.push(['trackEvent', '优惠券页面', '链接淘宝','购买']);
+        })
     }
 }
 
