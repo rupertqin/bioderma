@@ -4,3 +4,4 @@ node_modules/
 *.gz
 bin/node
 wechat-info.json
+config.js

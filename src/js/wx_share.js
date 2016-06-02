@@ -7,11 +7,26 @@ function wechatSetting(signature) {
         timestamp: signature.timestamp, // 必填，生成签名的时间戳
         nonceStr: signature.nonceStr, // 必填，生成签名的随机串
         signature: signature.signature,// 必填，签名，见附录1
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
     });
 
 
     wx.ready(function(){
         wx.onMenuShareAppMessage({
+            title: 'bidoi', // 分享标题
+            desc: 'miao shu', // 分享描述
+            link: 'baidu.com', // 分享链接
+            imgUrl: '', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () { 
+            // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+            // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareTimeline({
             title: 'bidoi', // 分享标题
             desc: 'miao shu', // 分享描述
             link: 'baidu.com', // 分享链接
