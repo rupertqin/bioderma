@@ -1,7 +1,7 @@
 import 'gsap'
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
-import {$, $$} from './util'
-import './wx_share'
+import {$, $$, get, post} from './util'
+import wechatSetting from './wx_share'
 import '../css/normalize.css'
 import '../css/app.css'
 import '../../build/css/sprite.css'
@@ -297,7 +297,18 @@ class ProductPage {
     }
 }
 
+function getSignature(fn) {
+    get('/get-signature', {}, fn)
+}
+
+getSignature((data)=> {
+    console.log('======= wechatSetting', wechatSetting)
+    wechatSetting(data )
+})
+
+
 $('body')[0].onload = function() {
+    
     if ($$('body#index-page')) {
         var indexAnimate = new IndexAnimate()
     } else if($$('body#animate-page')) {

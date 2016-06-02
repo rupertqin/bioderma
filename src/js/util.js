@@ -34,4 +34,26 @@ NodeList.prototype.remove = function () {
     return this;
 };
 
-export {$, $$}
+function request(type, url, opts, callback) {
+  var xhr = new XMLHttpRequest();
+  if (typeof opts === 'function') {
+    callback = opts;
+    opts = null;
+  }
+  xhr.open(type, url);
+  var fd = new FormData();
+  if (type === 'POST' && opts) {
+    for (var key in opts) {
+      fd.append(key, JSON.stringify(opts[key]));
+    }
+  }
+  xhr.onload = function () {
+    callback(JSON.parse(xhr.response));
+  };
+  xhr.send(opts ? fd : null);
+}
+
+var get = request.bind(this, 'GET');
+var post = request.bind(this, 'POST');
+
+export {$, $$, get, post}

@@ -5,6 +5,7 @@ var webpackDevMiddleware = require('webpack-dev-middleware')
 var WebpackConfig = require('./webpack.config')
 
 var app = express()
+var router = express.Router()
 
 app.use(webpackDevMiddleware(webpack(WebpackConfig), {
   publicPath: '/build',
@@ -20,7 +21,11 @@ app.use(webpackDevMiddleware(webpack(WebpackConfig), {
 var fs = require('fs')
 var path = require('path')
 
+require('./wechat')(app, router)
+
 app.use(express.static(__dirname))
+
+
 
 app.listen(4000, '0.0.0.0', function () {
   console.log('Server listening on http://localhost:4000, Ctrl+C to stop')
