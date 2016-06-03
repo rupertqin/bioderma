@@ -48,7 +48,7 @@ module.exports = {
                 }]]
             },
             apiOptions: {
-                cssImageRef: "img/sprite.png"
+                cssImageRef: "http://coigres.qiniudn.com/build/img/sprite.png"
             }
             
         })
