@@ -1,6 +1,8 @@
 'use strict'
-
+var http = require('http')
 var wx = require('wechat-jssdk')
+var moment = require('moment')
+var querystring = require('querystring')
 var config = require('./config')
 
 wx.initialize({
@@ -28,6 +30,45 @@ module.exports = function(app, router) {
         wx.jssdk.getSignatureByURL(req.query.url, function(signatureDate) {
             res.json(signatureDate);
         });
+    });
+    
+    router.get('/track', function(req, response) {
+        var postData = querystring.stringify({
+            campaign_id : 'zgkj-bdma',
+            token: 'imtravelzoo',
+            fromkol: moment().format('YYYY-MM-DD H:mm:ss')
+        });
+        var options = {
+            hostname: '218.244.145.245',
+            port: 80,
+            path: '/api/contact/form',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': postData.length
+            }
+        };
+        
+        var req = http.request(options, (res) => {
+            console.log(`STATUS: ${res.statusCode}`);
+            console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
+            res.setEncoding('utf8');
+            res.on('data', (chunk) => {
+                console.log(`BODY: ${chunk}`);
+                response.json(chunk);
+            });
+            res.on('end', () => {
+                console.log('No more data in response.')
+            })
+        });
+
+        req.on('error', (e) => {
+            console.log(`problem with request: ${e.message}`);
+        });
+
+        // write data to request body
+        req.write(postData);
+        req.end();
     });
 
     app.use('/', router)

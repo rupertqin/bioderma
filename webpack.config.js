@@ -2,6 +2,7 @@
 const path = require('path');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const config = require('./config')
 
 module.exports = {
     entry: {
@@ -48,7 +49,7 @@ module.exports = {
                 }]]
             },
             apiOptions: {
-                cssImageRef: "http://coigres.qiniudn.com/build/img/sprite.png"
+                cssImageRef: config.cdnUrl + "/build/img/sprite.png"
             }
             
         })

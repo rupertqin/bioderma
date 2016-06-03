@@ -9,7 +9,7 @@ var app = express()
 var router = express.Router()
 
 
-if (config.debug) {
+if (config.dev) {
   app.use(webpackDevMiddleware(webpack(WebpackConfig), {
     publicPath: '/build',
     stats: {

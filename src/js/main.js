@@ -304,11 +304,9 @@ class ProductPage {
             const linkUrl = e.target.href
             e.preventDefault()
             _paq.push(['trackEvent', '优惠券页面', '链接淘宝','购买']);
-            const url = `http://218.244.145.245/api/contact/form?campaign_id=zgkj-bdma&token=imtravelzoo&fromkol=${from||''}&CZ_created=${moment().format('YYYY-MM-DD H:mm:ss')}`           
-            $$('body').insertAdjacentHTML('beforeend', `<img style="display:none;" src="${url}"/>`)
-            setTimeout(()=> {
+            get('/track', (data)=> {
                 location.href = linkUrl + location.search
-            }, 1 * 1000)
+            })
         }
         $('.tmall-link').on('touchstart', cb)
         // $('.tmall-link').on('click', cb)
@@ -330,6 +328,7 @@ function getSignature(callback) {
 
 function trackImg() {
     var from = getParameterByName('from', window.location.href)
+    var url = `http://218.244.145.245/mlog.php?campaign_id=zgkj-bdma&fromkol=${from}`
     $$('body').insertAdjacentHTML('beforeend', `<img style="display:none;" src="http://218.244.145.245/mlog.php?campaign_id=zgkj-bdma&fromkol=${from}"/>`)
 }
 

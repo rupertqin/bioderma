@@ -26,6 +26,7 @@
     "webpack-spritesmith": "^0.2.0"
   },
   "scripts": {
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

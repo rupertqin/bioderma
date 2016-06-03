@@ -417,7 +417,7 @@ textarea {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }html,body { }
-body.animate {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;position: relative;}
+body.animate {height: 1862px;background: url(http://coigres.qiniudn.com/img/bg.jpg) no-repeat 0 0;position: relative;}
 .thing {position: absolute;background-repeat: no-repeat; background-position:0 0;}
 .girl-sad {bottom: 4px;left: 24px;}
 .girl-smile {bottom: 10px;left: 68px;}
@@ -435,8 +435,8 @@ body.animate {height: 1862px;background: url(../img/bg.jpg) no-repeat 0 0;positi
 .blue-bottle {left: 582px;top: 132px;}
 .blue-bottle-lid {left: 37px;top: -16px;}
 .bubble {left: 36px;top: 622px;}
-.droplet-red-img {left: 236px;top: 352px; width: 100px;height: 100px;background-image: url(../img/droplet-red.gif); background-size: 100px 100px;}
-.droplet-blue-img {left: 236px;top: 352px;  width: 100px;height: 100px;background-image: url(../img/droplet-blue.gif); background-size: 100px 100px;}
+.droplet-red-img {left: 236px;top: 352px; width: 100px;height: 100px;background-image: url(http://coigres.qiniudn.com/img/droplet-red.gif); background-size: 100px 100px;}
+.droplet-blue-img {left: 236px;top: 352px;  width: 100px;height: 100px;background-image: url(http://coigres.qiniudn.com/img/droplet-blue.gif); background-size: 100px 100px;}
 .pipe-red {left: 37px;top: 534px; }
 .pipe-blue {left: 37px;top: 534px; }
 .blue-bottle-incling {left: 0;top: 0; }
@@ -474,121 +474,121 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 <i class="icon icon-home"></i>
 */
 .blue-bottle-lid {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -2352px -594px;
   width: 69px;
   height: 24px;
 }
 .blue-bottle {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1009px -812px;
   width: 144px;
   height: 349px;
 }
 .bubble {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: 0px -812px;
   width: 687px;
   height: 531px;
 }
 .girl-big-smile {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1356px 0px;
   width: 504px;
   height: 734px;
 }
 .girl-sad {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: 0px -1343px;
   width: 444px;
   height: 755px;
 }
 .girl-smile {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1860px 0px;
   width: 492px;
   height: 734px;
 }
 .go {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1296px -932px;
   width: 172px;
   height: 171px;
 }
 .index-girl {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -687px -812px;
   width: 322px;
   height: 476px;
 }
 .pipe-blue {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -678px 0px;
   width: 678px;
   height: 812px;
 }
 .pipe-red {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: 0px 0px;
   width: 678px;
   height: 812px;
 }
 .red-bottle-glow {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1860px -734px;
   width: 298px;
   height: 515px;
 }
 .red-bottle-lid {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -2352px -618px;
   width: 68px;
   height: 22px;
 }
 .red-bottle {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1153px -812px;
   width: 143px;
   height: 348px;
 }
 .tmall-link {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1296px -812px;
   width: 382px;
   height: 120px;
 }
 .txt-1 {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -444px -1343px;
   width: 128px;
   height: 368px;
 }
 .txt-3 {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -2352px -421px;
   width: 50px;
   height: 173px;
 }
 .txt-4 {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1860px -1249px;
   width: 368px;
   height: 69px;
 }
 .txt-6 {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -2352px 0px;
   width: 107px;
   height: 421px;
 }
 .txt-7 {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -2158px -734px;
   width: 160px;
   height: 433px;
 }
 .txt-8 {
-  background-image: url(img/sprite.png);
+  background-image: url(/build/img/sprite.png);
   background-position: -1468px -932px;
   width: 247px;
   height: 80px;
