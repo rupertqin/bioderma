@@ -8,10 +8,12 @@ var config = require('./config')
 var app = express()
 var router = express.Router()
 
+app.use(express.static(__dirname))
 
 if (config.dev) {
   app.use(webpackDevMiddleware(webpack(WebpackConfig), {
     publicPath: '/build',
+    noInfo: true,
     stats: {
       colors: true
     },
@@ -26,7 +28,6 @@ var path = require('path')
 
 require('./wechat')(app, router)
 
-app.use(express.static(__dirname))
 
 
 

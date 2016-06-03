@@ -48,7 +48,7 @@ function request(type, url, opts, callback) {
     }
   }
   xhr.onload = function () {
-    callback(JSON.parse(xhr.response));
+    callback && callback(JSON.parse(xhr.response));
   };
   xhr.send(opts ? fd : null);
 }

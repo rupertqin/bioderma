@@ -1,6 +1,5 @@
 import 'gsap'
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
-import moment from 'moment'
 import {$, $$, get, post, getParameterByName} from './util'
 import wechatSetting from './wx_share'
 import '../css/normalize.css'
