@@ -3,21 +3,24 @@ var express = require('express')
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var WebpackConfig = require('./webpack.config')
+var config = require('./config')
 
 var app = express()
 var router = express.Router()
 
-app.use(webpackDevMiddleware(webpack(WebpackConfig), {
-  publicPath: '/build',
-  stats: {
-    colors: true
-  },
-  watchOptions: {
-    aggregateTimeout: 500,
-    poll: true
-  }
-}))
 
+if (config.debug) {
+  app.use(webpackDevMiddleware(webpack(WebpackConfig), {
+    publicPath: '/build',
+    stats: {
+      colors: true
+    },
+    watchOptions: {
+      aggregateTimeout: 500,
+      poll: true
+    }
+  }))
+}
 var fs = require('fs')
 var path = require('path')
 

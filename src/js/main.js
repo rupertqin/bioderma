@@ -316,8 +316,9 @@ function jsonpGet(url, callbackName) {
     document.body.appendChild(scriptEl)
 }
 
-function getSignature(fn) {
-    get('/get-signature?url=' + encodeURIComponent(location.href), {}, fn)
+function getSignature(callback) {
+    
+    get('/get-signature?url=' + encodeURIComponent(location.href), callback)
 }
 
 function trackImg() {
