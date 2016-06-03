@@ -241,13 +241,15 @@ class AnimatePage {
     }
     
     gotoMall() {
-        location.href = 'product.html'
+        var search = location.search
+        location.href = 'product.html' + location.search
     }
 }
 
 class IndexAnimate {
     constructor() {
         var self = this
+        this.addLink()
         this.intervalBottle = undefined
         this.bottlePosture()
         this.quiverBottle($$('.blue-bottle'))
@@ -256,6 +258,11 @@ class IndexAnimate {
         setTimeout(function(){
             self.quiverBottle($$('.red-bottle'))
         }, 100)
+    }
+    
+    addLink() {
+        var search = location.search
+        $$('.go').href = 'animate.html' + search
     }
     
     bottlePosture() {
@@ -300,7 +307,7 @@ class ProductPage {
             const url = `http://218.244.145.245/api/contact/form?campaign_id=zgkj-bdma&token=imtravelzoo&fromkol=${from||''}&CZ_created=${moment().format('YYYY-MM-DD H:mm:ss')}`           
             $$('body').insertAdjacentHTML('beforeend', `<img style="display:none;" src="${url}"/>`)
             setTimeout(()=> {
-                location.href = linkUrl
+                location.href = linkUrl + location.search
             }, 1 * 1000)
         }
         $('.tmall-link').on('touchstart', cb)
@@ -331,6 +338,8 @@ getSignature((data)=> {
 })
 
 trackImg()
+
+
 
 $('body')[0].onload = function() {
     
