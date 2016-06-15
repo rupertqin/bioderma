@@ -33,10 +33,11 @@ module.exports = function(app, router) {
     });
     
     router.get('/track', function(req, response) {
+        // console.log('======= req: ', req.query)
         var postData = querystring.stringify({
             campaign_id : 'zgkj-bdma',
             token: 'imtravelzoo',
-            fromkol: moment().format('YYYY-MM-DD H:mm:ss')
+            fromkol: req.query.fromkol
         });
         var options = {
             hostname: '218.244.145.245',

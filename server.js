@@ -1,5 +1,6 @@
 /*eslint-disable no-console */
 var express = require('express')
+var bodyParser = require('body-parser')
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var WebpackConfig = require('./webpack.config')
@@ -9,6 +10,8 @@ var app = express()
 var router = express.Router()
 
 app.use(express.static(__dirname))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 if (config.dev) {
   app.use(webpackDevMiddleware(webpack(WebpackConfig), {

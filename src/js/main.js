@@ -303,7 +303,7 @@ class ProductPage {
             const linkUrl = e.target.href
             e.preventDefault()
             _paq.push(['trackEvent', '优惠券页面', '链接淘宝','购买']);
-            get('/track', (data)=> {
+            get('/track?fromkol=' + from, (data)=> {
                 location.href = linkUrl + location.search
             })
         }
